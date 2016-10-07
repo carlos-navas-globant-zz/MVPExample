@@ -3,7 +3,7 @@ package com.navas.mvpexample.ui.mvp.presenter;
 import com.navas.mvpexample.ui.mvp.model.MainModel;
 import com.navas.mvpexample.ui.mvp.view.MainView;
 import com.navas.mvpexample.ui.mvp.view.MainView.BroadcastButtonPrssedEvent;
-import com.navas.mvpexample.ui.mvp.view.MainView.DoneButtonPressedEvent;
+import com.navas.mvpexample.ui.mvp.view.MainView.DisplayButtonPressedEvent;
 import com.squareup.otto.Subscribe;
 
 public class MainPresenter {
@@ -17,8 +17,8 @@ public class MainPresenter {
     }
 
     @Subscribe
-    public void onButtonPressed(DoneButtonPressedEvent event) {
-        view.displayName(model.getName());
+    public void onButtonPressed(DisplayButtonPressedEvent event) {
+        view.displayName(event.getName());
     }
 
     @Subscribe

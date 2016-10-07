@@ -4,7 +4,7 @@ package com.navas.mvpexample.ui.mvp.presenter;
 import com.navas.mvpexample.ui.mvp.model.MainModel;
 import com.navas.mvpexample.ui.mvp.view.MainView;
 import com.navas.mvpexample.ui.mvp.view.MainView.BroadcastButtonPrssedEvent;
-import com.navas.mvpexample.ui.mvp.view.MainView.DoneButtonPressedEvent;
+import com.navas.mvpexample.ui.mvp.view.MainView.DisplayButtonPressedEvent;
 
 import org.junit.Before;
 import org.junit.Test;
@@ -12,7 +12,6 @@ import org.mockito.Mock;
 import org.mockito.MockitoAnnotations;
 
 import static org.mockito.Mockito.verify;
-import static org.mockito.Mockito.when;
 
 public class MainPresenterTest {
 
@@ -31,9 +30,8 @@ public class MainPresenterTest {
 
     @Test
     public void itShouldDisplayName() {
-        when(model.getName()).thenReturn("sarasa");
-        presenter.onButtonPressed(new DoneButtonPressedEvent());
-        verify(view).displayName(model.getName());
+        presenter.onButtonPressed(new DisplayButtonPressedEvent("Nombre"));
+        verify(view).displayName("Nombre");
     }
 
     @Test

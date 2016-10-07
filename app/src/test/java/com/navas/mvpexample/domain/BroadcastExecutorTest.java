@@ -20,6 +20,7 @@ import static org.robolectric.Shadows.shadowOf;
 @RunWith(RobolectricTestRunner.class)
 @Config(manifest=Config.NONE)
 public class BroadcastExecutorTest {
+
         @Test
         public void itShouldBroadcastActiveCamera() throws Exception {
             new BroadcastExecutor(RuntimeEnvironment.application).sendBroadcast();
